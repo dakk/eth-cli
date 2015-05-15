@@ -33,6 +33,6 @@ else:
 
 		print ('\nAccounts:')
 		for x in json_req ('eth_accounts'):
-			print ('\t',x,'\t->\t',int (int (json_req ('eth_getBalance', [x, 'latest']), 16)/ 1000000000000000),'finney (',int (int (json_req ('eth_getBalance', [x, 'pending']), 16)/ 1000000000000000),'finney pending )')
+			print ('\t',x,'\t->\t',float (int (int (json_req ('eth_getBalance', [x, 'latest']), 16) / 1000000000000000) / 1000),' eth')
 
-		time.sleep (2)
+		time.sleep (10)
